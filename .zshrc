@@ -1,1 +1,1 @@
-/home/linux/.zshrc
+../../.zshrc
