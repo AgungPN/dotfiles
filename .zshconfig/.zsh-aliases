@@ -1,0 +1,184 @@
+#=====================================
+# SYSTEM ALIASES
+#=====================================
+# alias cat="bat"
+alias copy="xclip -selection clipboard"
+alias update="sudo apt update && sudo apt upgrade"
+alias updatey="sudo apt update && sudo apt upgrade -y" # update without confirmation
+alias v="nvim"
+alias nv="nvim-chad"
+alias path='echo -e ${PATH//:/\\n}'  # print env with new line
+alias ls="ls --color=auto"
+alias ll="ls -plh --color=auto"
+alias la="ll -a"
+alias s="sudo"
+alias cls="clear"
+alias mkdir="mkdir -pv" # create folder if doesn't have parent folder will create to and show result
+# confirmation
+alias rm="rm -iv"
+alias ln="ln -iv"
+alias copypath='pwd | xclip -selection clipboard' # copy currently path
+alias zshconfig="source ~/.zshrc"
+alias tmuxconfig="tmux source-file ~/.tmux.conf"
+
+# ////////// FOR LAMP //////////
+alias lamp-start="sudo service mysql start && sudo service apache2 start && echo \" Lamp Start \" "
+alias lamp-stop="sudo service mysql stop && sudo service apache2 stop && echo \" Lamp Stop \""
+
+#=====================================
+# LARAVEL ALIASES
+#=====================================
+alias a="php artisan"
+alias sa="vendor/bin/sail artisan"
+alias pakg="php artisan key:generate"
+alias pami="php artisan make:migration"
+alias pamen="php artisan make:enum"
+alias enum="php artisan make:enum"
+alias model="php artisan make:model"
+alias migration="php artisan make:migration"
+alias middleware="php artisan make:middleware"
+alias controller="php artisan make:controller"
+alias request="php artisan make:request"
+alias pamrt="php artisan make:request"
+alias pamre="php artisan make:resource"
+alias sail="vendor/bin/sail"
+alias vapor="vendor/bin/vapor"
+
+#=====================================
+# PYTHON
+#=====================================
+alias py="python"
+
+#=====================================
+# DOCKER 
+#=====================================
+alias doc="docker"
+alias dco="docker compose"
+
+#=====================================
+# GIT ALIASES
+#=====================================
+alias gacm="git add -A && git commit -m $1"
+alias gas="git add -A && git stash"
+alias gsp="git stash pop"
+
+alias lg="lazygit" # need to install first
+
+#*************************************
+# FUNCTIONS
+#*************************************
+
+# gacmp alias
+gacmp() {
+    git add -A
+    git commit -m "$1"
+    git push
+}
+
+# pull first before push
+gacmpp() {
+    git add -A
+    git commit -m "$1"
+    git pull
+    git push
+}
+
+# push upstream to origin current branch
+gacmpup() {
+    git add -A
+    git commit -m "$1"
+    git push --set-upstream origin $(git_current_branch)
+}
+
+#=====================================
+# Fuzzy Finder
+#=====================================
+# find folder and open to new tmux session
+jj() {
+  local directories=(
+    /var/www
+    ~/apps
+    ~/Desktop
+    ~/Documents
+    ~/Downloads
+    ~/.zshconfig
+    ~/.config
+    ~/.config/nvim/
+    ~/.config/alacritty/
+    ~/.config/go/
+  )
+
+  local target
+  target=$(find "${directories[@]}" -type d \( -name node_modules -o -name vendor -o -name .gradle \) -prune -o -type d -print | FZF_DEFAULT_OPTS="" fzf-tmux --reverse -p)
+
+  if [ -n "$target" ]; then
+    local session_name=$(basename "$target") # get base folder name
+    if ! tmux has-session -t "$session_name" 2>/dev/null; then # if session not found
+      tmux new-session -s "$session_name" -c "$target" -d # then create it, with -s => session name, -c => first window, -d => detach
+    fi
+    tmux switch-client -t "$session_name" # now we can jump to target session
+  fi
+}
+
+#
+ff() {
+  local directories=(
+    /var/www
+    ~/apps
+    ~/Desktop
+    ~/Documents
+    ~/Downloads
+    ~/.zshconfig
+    ~/.config
+    ~/.config/nvim/
+    ~/.config/alacritty/
+    ~/.config/go/
+  )
+
+  local target
+  target=$(find "${directories[@]}" -type d \( -name node_modules -o -name vendor -o -name .gradle \) -prune -o -type d -print | FZF_DEFAULT_OPTS="" fzf-tmux --reverse -p)
+
+  if [ -n "$target" ]; then
+    cd "$target"
+  fi
+}
+#
+bindkey -s '^f' 'ff\n'
+
+# change directory, if not found then create it
+z() {
+    local dir="$1"
+    if [ ! -d "$dir" ]; then
+        mkdir -p "$dir" && cd "$dir" || return 1
+    else
+        cd "$dir"
+    fi
+}
+
+#=====================================
+# YARN
+#=====================================
+
+# ////////// FOR TYPESCRIPT //////////
+# add package with @types/* (for typescript library)
+yat() {
+  packages=("$@")  # Store all arguments passed to the function in the 'packages' array
+  for package in "${packages[@]}"; do  # Iterate over each package in the 'packages' array
+    yarn add "$package"  # Install the current package using 'yarn add'
+    yarn add "@types/$package" -D  # Install the corresponding @types package as a devDependency
+  done
+}
+
+# add dev package with @types
+yatd() {
+    yarn add $1 @types/$1 -D
+}
+
+# remove package with @types/
+yrmt() {
+  packages=("$@")  
+  for package in "${packages[@]}"; do  
+    yarn remove "$package"  
+    yarn remove "@types/$package"  
+  done
+}

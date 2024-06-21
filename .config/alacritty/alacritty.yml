@@ -1,0 +1,140 @@
+font:
+  normal:
+    family: JetBrainsMono NF
+    style: Regular
+
+  size: 12
+  offset:
+    y: 0
+
+window:
+  title: ""
+  opacity: 0.87
+  padding:
+    x: 10
+    y: 5
+
+schemes:
+  tokyonight: &tokyonight
+    primary:
+      background: "0x1a1b26"
+      foreground: "0xc0caf5"
+
+    normal:
+      black: "#333333"
+      red: "#CC0000"
+      green: "#4E9A06"
+      yellow: "#C4A000"
+      blue: "#3465A4"
+      magenta: "#75507B"
+      cyan: "#06989A"
+      white: "#D3D7CF"
+
+    bright:
+      black: "#88807C"
+      red: "#F15D22"
+      green: "#73C48F"
+      yellow: "#FFCE51"
+      blue: "#48B9C7"
+      magenta: "#AD7FA8"
+      cyan: "#34E2E2"
+      white: "#EEEEEC"
+
+    indexed_colors:
+      - { index: 16, color: "0xff9e64" }
+      - { index: 17, color: "0xdb4b4b" }
+
+  bloodmoon: &bloodmoon
+    primary:
+      background: '0x10100E'
+      foreground: '0xC6C6C4'
+
+    normal:
+      black:   '0x10100E'
+      red:     '0xC40233'
+      green:   '0x009F6B'
+      yellow:  '0xFFD700'
+      blue:    '0x0087BD'
+      magenta: '0x9A4EAE'
+      cyan:    '0x20B2AA'
+      white:   '0xC6C6C4'
+
+    bright:
+      black:   '0x696969'
+      red:     '0xFF2400'
+      green:   '0x03C03C'
+      yellow:  '0xFDFF00'
+      blue:    '0x007FFF'
+      magenta: '0xFF1493'
+      cyan:    '0x00CCCC'
+      white:   '0xFFFAFA'
+
+  dracula: &dracula
+    primary:
+      background: '#282a36'
+      foreground: '#f8f8f2'
+      bright_foreground: '#ffffff'
+    cursor:
+      text: CellBackground
+      cursor: CellForeground
+    vi_mode_cursor:
+      text: CellBackground
+      cursor: CellForeground
+    search:
+      matches:
+        foreground: '#44475a'
+        background: '#50fa7b'
+      focused_match:
+        foreground: '#44475a'
+        background: '#ffb86c'
+      footer_bar:
+        background: '#282a36'
+        foreground: '#f8f8f2'
+    hints:
+      start:
+        foreground: '#282a36'
+        background: '#f1fa8c'
+      end:
+        foreground: '#f1fa8c'
+        background: '#282a36'
+    line_indicator:
+      foreground: None
+      background: None
+    selection:
+      text: CellForeground
+      background: '#44475a'
+    normal:
+      black: '#21222c'
+      red: '#ff5555'
+      green: '#50fa7b'
+      yellow: '#f1fa8c'
+      blue: '#bd93f9'
+      magenta: '#ff79c6'
+      cyan: '#8be9fd'
+      white: '#f8f8f2'
+    bright:
+      black: '#6272a4'
+      red: '#ff6e6e'
+      green: '#69ff94'
+      yellow: '#ffffa5'
+      blue: '#d6acff'
+      magenta: '#ff92df'
+      cyan: '#a4ffff'
+      white: '#ffffff'
+
+
+colors: *tokyonight
+
+cursor:
+  style:
+    shape: Block
+
+env:
+  TERM: xterm-256color
+
+shell:
+  program: /bin/zsh
+  args:
+    - -l
+    - -c
+    - "tmux attach || tmux" 
