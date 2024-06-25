@@ -5,19 +5,19 @@ return {
     local alpha = require("alpha")
     local dashboard = require("alpha.themes.dashboard")
 
-    	-- Set header
-		dashboard.section.header.val = {
+    -- Set header
+    dashboard.section.header.val = {
 
-			[[          ▀████▀▄▄              ▄█ ]],
-			[[            █▀    ▀▀▄▄▄▄▄    ▄▄▀▀█ ]],
-			[[    ▄        █          ▀▀▀▀▄  ▄▀  ]],
-			[[   ▄▀ ▀▄      ▀▄              ▀▄▀  ]],
-			[[  ▄▀    █     █▀   ▄█▀▄      ▄█    ]],
-			[[  ▀▄     ▀▄  █     ▀██▀     ██▄█   ]],
-			[[   ▀▄    ▄▀ █   ▄██▄   ▄  ▄  ▀▀ █  ]],
-			[[    █  ▄▀  █    ▀██▀    ▀▀ ▀▀  ▄▀  ]],
-			[[   █   █  █      ▄▄           ▄▀   ]],
-		}
+      [[          ▀████▀▄▄              ▄█ ]],
+      [[            █▀    ▀▀▄▄▄▄▄    ▄▄▀▀█ ]],
+      [[    ▄        █          ▀▀▀▀▄  ▄▀  ]],
+      [[   ▄▀ ▀▄      ▀▄              ▀▄▀  ]],
+      [[  ▄▀    █     █▀   ▄█▀▄      ▄█    ]],
+      [[  ▀▄     ▀▄  █     ▀██▀     ██▄█   ]],
+      [[   ▀▄    ▄▀ █   ▄██▄   ▄  ▄  ▀▀ █  ]],
+      [[    █  ▄▀  █    ▀██▀    ▀▀ ▀▀  ▄▀  ]],
+      [[   █   █  █      ▄▄           ▄▀   ]],
+    }
 
     -- Set menu
     dashboard.section.buttons.val = {

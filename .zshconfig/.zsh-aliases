@@ -1,7 +1,7 @@
 #=====================================
 # SYSTEM ALIASES
 #=====================================
-# alias cat="bat"
+alias cat="bat"
 alias copy="xclip -selection clipboard"
 alias update="sudo apt update && sudo apt upgrade"
 alias updatey="sudo apt update && sudo apt upgrade -y" # update without confirmation

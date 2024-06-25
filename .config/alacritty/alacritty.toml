@@ -1,34 +1,5 @@
-[[colors.indexed_colors]]
-color = "0xff9e64"
-index = 16
+import = [ "~/.config/alacritty/theme/tokyo-night.toml"]
 
-[[colors.indexed_colors]]
-color = "0xdb4b4b"
-index = 17
-
-[colors.bright]
-black = "#88807C"
-blue = "#48B9C7"
-cyan = "#34E2E2"
-green = "#73C48F"
-magenta = "#AD7FA8"
-red = "#F15D22"
-white = "#EEEEEC"
-yellow = "#FFCE51"
-
-[colors.normal]
-black = "#333333"
-blue = "#3465A4"
-cyan = "#06989A"
-green = "#4E9A06"
-magenta = "#75507B"
-red = "#CC0000"
-white = "#D3D7CF"
-yellow = "#C4A000"
-
-[colors.primary]
-background = "0x1a1b26"
-foreground = "0xc0caf5"
 
 [cursor.style]
 shape = "Block"
@@ -47,13 +18,19 @@ style = "Regular"
 y = 0
 
 [shell]
-args = ["-l", "-c", "tmux attach || tmux"]
+args = ["-l", "-c", "tmux"]
 program = "/bin/zsh"
 
 [window]
 opacity = 0.95
 title = ""
+decorations = "None"
 
 [window.padding]
 x = 10
-y = 5
+y = 8
+
+[keyboard]
+bindings = [
+{ key = "F11", action = "ToggleFullscreen" }
+]
