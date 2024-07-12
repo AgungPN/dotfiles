@@ -53,7 +53,9 @@ alias py="python"
 # DOCKER 
 #=====================================
 alias doc="docker"
+alias docc="docker container"
 alias dco="docker compose"
+alias lzd="lazydocker" # need to install first
 
 #=====================================
 # GIT ALIASES
@@ -130,9 +132,9 @@ ff() {
     ~/Downloads
     ~/.zshconfig
     ~/.config
-    ~/.config/nvim/
-    ~/.config/alacritty/
-    ~/.config/go/
+
+    ~/dotfiles/.zshconfig
+    ~/dotfiles/.config
   )
 
   local target

@@ -13,3 +13,5 @@ then use GNU stow to create symlinks
 ```bash
 stow .
 ```
+
+[alacritty theme](https://github.com/alacritty/alacritty-theme)

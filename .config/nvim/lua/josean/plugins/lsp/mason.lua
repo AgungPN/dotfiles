@@ -38,6 +38,7 @@ return {
         "prismals",
         "pyright",
         "gopls",
+        "terraformls",
       },
       -- auto-install configured servers (with lspconfig)
       automatic_installation = true, -- not the same as ensure_installed
@@ -52,6 +53,7 @@ return {
         "flake8",
         "debugpy",
         "eslint_d",
+        "tflint",
       },
     })
   end,
