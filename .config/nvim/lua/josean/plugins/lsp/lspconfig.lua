@@ -160,6 +160,13 @@ return {
           capabilities = capabilities,
           on_attach = function(client, bufnr)
             -- Custom settings for pyright, if needed
+            -- Autocommand to restart LSP when a new file is created
+            vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+              pattern = "*.py",
+              callback = function()
+                vim.cmd("LspRestart")
+              end,
+            })
           end,
         })
       end,
