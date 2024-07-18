@@ -50,7 +50,9 @@ return {
         "stylua", -- lua formatter
         "isort", -- python formatter
         "black", -- python formatter
-        "flake8",
+        "flake8", -- python linting option 1
+        "pylint", -- python linting option 2
+        "ruff_lsp",
         "debugpy",
         "eslint_d",
         "tflint",

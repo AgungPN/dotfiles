@@ -1,7 +1,26 @@
+function BackgroundTransparent()
+  vim.cmd("highlight Normal guibg=NONE ctermbg=NONE")
+  vim.cmd("highlight NonText guibg=NONE ctermbg=NONE")
+  vim.cmd("highlight LineNr guibg=NONE ctermbg=NONE")
+  vim.cmd("highlight Folded guibg=NONE ctermbg=NONE")
+  vim.cmd("highlight EndOfBuffer guibg=NONE ctermbg=NONE")
+end
+
+-- Call the function to apply the transparency
+BackgroundTransparent()
+
 return {
   {
     "rose-pine/neovim",
     name = "rose-pine",
+
+    config = function()
+      local transparent = false -- set to true if you would like to enable transparency
+
+      require("rose-pine").setup({
+        transparent = transparent,
+      })
+    end,
   },
   {
     "haishanh/night-owl.vim",

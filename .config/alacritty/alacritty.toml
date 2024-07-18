@@ -14,6 +14,10 @@ size = 10.5
 family = "JetBrainsMono NF"
 style = "Regular"
 
+[font.italic]
+family = "Dank Mono"
+style = "Italic"
+
 [font.offset]
 y = 0
 
