@@ -1,14 +1,17 @@
 #=====================================
 # SYSTEM ALIASES
 #=====================================
-alias cat="bat"
+
+unalias ls 2>/dev/null
+alias ls="exa --color=always --icons=always --git"
+# alias ls="ls --color=auto"
+alias cat="bat" 
 alias copy="xclip -selection clipboard"
 alias update="sudo apt update && sudo apt upgrade"
 alias updatey="sudo apt update && sudo apt upgrade -y" # update without confirmation
 alias v="nvim"
 alias nv="nvim-chad"
 alias path='echo -e ${PATH//:/\\n}'  # print env with new line
-alias ls="ls --color=auto"
 alias ll="ls -plh --color=auto"
 alias la="ll -a"
 alias s="sudo"
@@ -20,10 +23,11 @@ alias ln="ln -iv"
 alias copypath='pwd | xclip -selection clipboard' # copy currently path
 alias zshconfig="source ~/.zshrc"
 alias tmuxconfig="tmux source-file ~/.tmux.conf"
-
 # ////////// FOR LAMP //////////
-alias lamp-start="sudo service mysql start && sudo service apache2 start && echo \" Lamp Start \" "
-alias lamp-stop="sudo service mysql stop && sudo service apache2 stop && echo \" Lamp Stop \""
+# alias lamp-start="sudo service mysql start && sudo service apache2 start && echo \" Lamp Start \" "
+# alias lamp-stop="sudo service mysql stop && sudo service apache2 stop && echo \" Lamp Stop \""
+alias lamp-start="sudo systemctl start mariadb.service && sudo systemctl start httpd.service && echo \"Lamp Start\""
+alias lamp-stop="sudo systemctl stop mariadb.service && sudo systemctl stop httpd.service && echo \"Lamp stop\""
 
 #=====================================
 # LARAVEL ALIASES
@@ -47,7 +51,7 @@ alias vapor="vendor/bin/vapor"
 #=====================================
 # PYTHON
 #=====================================
-alias py="python"
+# alias py="python"
 
 #=====================================
 # DOCKER 
@@ -105,9 +109,9 @@ jj() {
     ~/Downloads
     ~/.zshconfig
     ~/.config
-    ~/.config/nvim/
-    ~/.config/alacritty/
-    ~/.config/go/
+
+    ~/dotfiles/.zshconfig
+    ~/dotfiles/.config
   )
 
   local target

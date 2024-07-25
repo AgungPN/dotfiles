@@ -37,10 +37,11 @@ HISTDUP=erase # delete duplicate history
 # ==================================
 # SOURCE ZSH FILES
 # ==================================
+source $ZSH/oh-my-zsh.sh
 source ~/.zshconfig/.zsh-aliases
 source ~/.zshconfig/.zshenv
 source ~/.zshconfig/.zshnvim
-source $ZSH/oh-my-zsh.sh
+source ~/.zshconfig/.zsh-als
 
 # bindkey -v
 # export KEYTIMEOUT=1
@@ -82,7 +83,7 @@ export NVM_DIR="$HOME/.nvm"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 
-export PATH=$PATH:/home/linux/.spicetify
+# export PATH=$PATH:/home/linux/.spicetify
 
 # Change default version node by NVM
 # nvm use 20
