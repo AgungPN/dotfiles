@@ -7,6 +7,7 @@
  export EDITOR=vim;
 
  export PATH=$PATH:/usr/local/go/bin # golang environment
+export PATH=$PATH:$HOME/go/bin
 # export PATH=$PATH:/usr/local/jdk-17.0.7/bin # java 17 jdk
 # Set JAVA_HOME ke JDK 17
 # export JAVA_HOME=/usr/local/jdk-17.0.7

@@ -16,6 +16,8 @@ return {
       todo_comments.jump_prev()
     end, { desc = "Previous todo comment" })
 
+    keymap.set("n", "<leader>ft", ":TodoTelescope<CR>", { desc = "Find Todo List" })
+
     todo_comments.setup()
   end,
 }

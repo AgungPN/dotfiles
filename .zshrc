@@ -37,11 +37,11 @@ HISTDUP=erase # delete duplicate history
 # ==================================
 # SOURCE ZSH FILES
 # ==================================
-source $ZSH/oh-my-zsh.sh
+# source $ZSH/oh-my-zsh.sh
+source ~/.oh-my-zsh/oh-my-zsh.sh
 source ~/.zshconfig/.zsh-aliases
 source ~/.zshconfig/.zshenv
 source ~/.zshconfig/.zshnvim
-source ~/.zshconfig/.zsh-als
 
 # bindkey -v
 # export KEYTIMEOUT=1
@@ -63,6 +63,9 @@ source ~/.zshconfig/.zsh-als
 # ==================================
 # FZF Section
 # ==================================
+# export FZF_CTRL_T_OPTS="--preview 'bat -n --color=always --line-range :500 {}'"
+# export FZF_ALT_C_OPTS="--preview 'eza --tree --color=always {} | head -200'"
+
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 export FZF_DEFAULT_OPTS="--height 50% -1 --layout=reverse-list --multi --preview='[[ \$(file --mime {}) =~ binary ]] && echo {} is a binary file || (bat --style=numbers --color=always {} || cat {}) 2> /dev/null | head -300'"
 [ -f /usr/share/fzf/shell/key-bindings.zsh ] && source /usr/share/fzf/shell/key-bindings.zsh
@@ -132,3 +135,7 @@ if [ -f '/home/linux/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/
 
 # add Pulumi to the PATH
 export PATH=$PATH:/home/linux/.pulumi/bin
+
+export WASMTIME_HOME="$HOME/.wasmtime"
+
+export PATH="$WASMTIME_HOME/bin:$PATH"
