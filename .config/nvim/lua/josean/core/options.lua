@@ -6,6 +6,10 @@ local opt = vim.opt
 opt.relativenumber = true -- show relative line numbers
 opt.number = true -- shows absolute line number on cursor line (when relative number is on)
 
+opt.foldmethod = "expr"
+opt.foldlevel = 60
+opt.foldexpr = "nvim_treesitter#foldexpr()"
+
 -- tabs & indentation
 opt.tabstop = 2 -- 2 spaces for tabs (prettier default)
 opt.shiftwidth = 2 -- 2 spaces for indent width

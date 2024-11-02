@@ -86,8 +86,6 @@ export NVM_DIR="$HOME/.nvm"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 
-# export PATH=$PATH:/home/linux/.spicetify
-
 # Change default version node by NVM
 # nvm use 20
 # clear
@@ -139,3 +137,6 @@ export PATH=$PATH:/home/linux/.pulumi/bin
 export WASMTIME_HOME="$HOME/.wasmtime"
 
 export PATH="$WASMTIME_HOME/bin:$PATH"
+
+
+export PATH=$PATH:/home/linux/.spicetify
