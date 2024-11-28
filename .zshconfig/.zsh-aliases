@@ -4,6 +4,7 @@
 
 unalias ls 2>/dev/null
 alias ls="exa --color=always --icons=always --git"
+alias metu="exit"
 # alias ls="ls --color=auto"
 alias cat="bat" 
 alias copy="xclip -selection clipboard"

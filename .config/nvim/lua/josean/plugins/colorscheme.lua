@@ -7,7 +7,7 @@ function BackgroundTransparent()
 end
 
 -- Call the function to apply the transparency
-BackgroundTransparent()
+-- BackgroundTransparent()
 
 return {
   {
@@ -21,6 +21,20 @@ return {
         transparent = transparent,
       })
     end,
+  },
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 1000,
+    config = function ()
+      local transparent = false -- set to true if you would like to enable transparency
+
+      require("rose-pine").setup({
+        transparent = transparent,
+      })
+
+      vim.cmd("colorscheme catppuccin")
+    end
   },
   {
     "haishanh/night-owl.vim",
@@ -70,7 +84,7 @@ return {
         end,
       })
 
-      vim.cmd("colorscheme tokyonight")
+      -- vim.cmd("colorscheme tokyonight")
     end,
   },
 }
